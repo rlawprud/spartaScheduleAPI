@@ -8,16 +8,13 @@
 - 일정 수정
 - 일정 삭제
 - 일정 조회
-- 댓글 생성
-- 댓글 수정
-- 댓글 샂게
-- 댓글 조회
 
 ## ERD
-<img width="913" height="268" alt="image" src="https://github.com/user-attachments/assets/c2ba3b45-1596-4555-8fa8-f088e2b7da0f" />
+<img width="420" height="269" alt="image" src="https://github.com/user-attachments/assets/a3b1c036-2383-4db4-b1bd-ad7f705748f2" />
+
 
 ## API 명세서
-
+https://documenter.getpostman.com/view/47176165/2sB3BANDT7
 
 ## 기술 스택
 JAVA17, SpringBoot, Spring data JPA, MySQL
