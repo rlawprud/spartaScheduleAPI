@@ -59,12 +59,13 @@ public class Schedule {
     // 업데이트하는 메서드입니다.
     // null 값이 포함될 수 있기 때문에, if 를 사용하여 값을 분류하고 적용합니다.
     public void update(SchedulePatchDto dto) {
+
+        // 수정을 위해 입력된 일정 제목이 null 값이 아닐 경우 이 객체의 title 을 입력된 제목으로 수정합니다.
         if (dto.getTitle() != null) {
             this.title = dto.getTitle();
         }
-        if (dto.getContent() != null) {
-            this.content = dto.getContent();
-        }
+
+        // 수정을 위해 입력된 작성자가 null 값이 아닐 경우 이 객체의 작성자를 입력된 값으로 수정합니다.
         if (dto.getWriter() != null) {
             this.writer = dto.getWriter();
         }

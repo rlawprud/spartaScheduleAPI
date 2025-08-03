@@ -1,5 +1,6 @@
 package com.example.spartascheduleapi.controller;
 
+import com.example.spartascheduleapi.dto.DeleteScheduleDto;
 import com.example.spartascheduleapi.dto.SchedulePatchDto;
 import com.example.spartascheduleapi.dto.ScheduleRequestDto;
 import com.example.spartascheduleapi.dto.ScheduleResponseDto;
@@ -36,17 +37,25 @@ public class ScheduleController {
 
     // "/schedule/post" 요청이 들어왔을 때 실행하는 구문입니다.
     // 입력한 데이터를 dto로 만들어 서비스로 넘겨줍니다.
-    @PostMapping("/schedule/post")
+    @PostMapping("/schedule")
     public void insertSchedule(@RequestBody ScheduleRequestDto dto) {
         scheduleService.insertSchedule(dto);
     }
 
-    // "/schedule/patch/{id}" 요청이 들어왔을 때 실행하는 구문입니다.
+    // "/schedule/patch/{scheduleId}" 요청이 들어왔을 때 실행하는 구문입니다.
     // ...patch/ 뒤에 오는 값을 Long 값으로 받아들입니다.
     // 또한, 입력된 값을 dto에 저장하여 서비스로 넘겨줍니다.
-    @PatchMapping("/schedule/patch/{id}")
-    public void updateSchedule(@PathVariable Long id, @RequestBody SchedulePatchDto dto) {
-        scheduleService.updateSchedule(id, dto);
+    @PatchMapping("/schedule/{scheduleId}")
+    public void updateSchedule(@PathVariable Long scheduleId, @RequestBody SchedulePatchDto dto) {
+        scheduleService.updateSchedule(scheduleId, dto);
+    }
+
+    // "/schedule/delete/{scheduleId}" 요정이 들어왔을 때 실행하는 구문입니다.
+    // ...delete/ 뒤에 오는 값을 Long 값으로 받아들입니다.
+    // 또한, 비밀번호를 dto로 저장하여 서비스로 넘겨줍니다.
+    @DeleteMapping("/schedule/{scheduleId}")
+    public void deleteSchedule(@PathVariable Long scheduleId, @RequestBody DeleteScheduleDto dto) {
+        scheduleService.deleteSchedule(scheduleId, dto);
     }
 
 }
